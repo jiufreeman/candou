@@ -1,7 +1,7 @@
 <?php
 
 //上传图片
-public function uploadImg($content, $filename, $bucket='candou-stage') {
+function uploadImg($content, $filename, $bucket='candou-stage') {
     //引入又拍云 PHP SDK
     require_once('upyun.class.php');
 
