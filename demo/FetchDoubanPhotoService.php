@@ -26,12 +26,14 @@ class FetchDoubanPhotoService {
 //        }
 
         //存储图片
-//        for ($i=0; $i<count($urls), $i++) {
-//            $url = $urls[$i];
-//            $content = file_get_contents($url);
+        for ($i=0; $i<count($urls), $i++) {
+            $url = $urls[$i];
+            echo $url;
+//            $content = file_get_contents($url);file_get_contents
+            
 //            $filename = basename($url);
 //            $this->uploadImg($content, $filename);
-//        }
+        }
 
         for( $i=0;$i<count($urls);$i++ ) {
             $user_id        = 0;
