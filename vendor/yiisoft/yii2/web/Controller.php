@@ -205,4 +205,21 @@ class Controller extends \yii\base\Controller
     {
         return Yii::$app->getResponse()->redirect(Yii::$app->getRequest()->getUrl() . $anchor);
     }
+
+    //上传图片
+    public function uploadImg($content, $filename, $bucket='candou-stage') {
+        //引入又拍云 PHP SDK
+        require_once('upyun.class.php');
+
+        //实例化又拍云对象, bucket, operate user, operate password
+        $upyun = new UpYun($bucket, 'maxwelldu', 'maxwelldu');
+
+        $opts = array(
+            UpYun::CONTENT_MD5 => md5($content)
+        );
+
+        $rsp = $upyun->writeFile("/".$filename, $content, true, $opts);
+        return $rsp;
+    }
+
 }
