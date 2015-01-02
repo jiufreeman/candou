@@ -21,7 +21,10 @@ function uploadImg($content, $filename, $bucket='candou-stage') {
 }
 
 $url = "http://img3.douban.com/view/photo/raw/public/p2218972270.jpg";
+echo $url;
 $filename = basename($url);
+echo $filename;
 $content = file_get_contents($url);
+echo $content;
 uploadImg($content, $url);
 
