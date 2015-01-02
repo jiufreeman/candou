@@ -56,7 +56,7 @@ class SiteController extends Controller
     public function actionTestupload()
     {
         $data = file_get_contents("http://img5.douban.com/view/photo/thumb/public/p2216009426.jpg");
-        Yii::$app()->upyun->upload("movie", "a.jpg", $data);
+        Yii::$app->upyun->upload("movie", "a.jpg", $data);
 //        Yii::app()->upyun->upload($domain,$savedname,$datas,$autoCreateDir=true);
     }
 
