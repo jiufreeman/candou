@@ -22,7 +22,7 @@ class SiteController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'error'],
+                        'actions' => ['login', 'error', 'testupload'],
                         'allow' => true,
                     ],
                     [
@@ -51,6 +51,13 @@ class SiteController extends Controller
                 'class' => 'yii\web\ErrorAction',
             ],
         ];
+    }
+
+    public function actionTestupload()
+    {
+        $data = file_get_contents("http://img5.douban.com/view/photo/thumb/public/p2216009426.jpg");
+        Yii::$app->upyun->upload("movie", "a.jpg", $data);
+//        Yii::app()->upyun->upload($domain,$savedname,$datas,$autoCreateDir=true);
     }
 
     public function actionIndex()
