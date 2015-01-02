@@ -42,10 +42,10 @@ class FetchDoubanPhotoService {
             $url            = $urls[$i];
             $stage          = basename($url);
 
-            //todo 写入数据库
-            $sql = "INSERT INTO n_movie_stage(movie_id, user_id, orders, type, stage, status, create_time, url) "
-                                    . " values($movie_id, $user_id, $orders, $type, '$stage', $status, $create_time, '$url')";
-            echo $sql;
+
+//            $sql = "INSERT INTO n_movie_stage(movie_id, user_id, orders, type, stage, status, create_time, url) "
+//                                    . " values($movie_id, $user_id, $orders, $type, '$stage', $status, $create_time, '$url')";
+//            echo $sql;
             /*
 echo '<br />'.$i.' //// ';
 echo $sql;
