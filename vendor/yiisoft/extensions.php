@@ -57,4 +57,22 @@ return array (
       '@yii/faker' => $vendorDir . '/yiisoft/yii2-faker',
     ),
   ),
+  'yiisoft/yii2-mongodb' => 
+  array (
+    'name' => 'yiisoft/yii2-mongodb',
+    'version' => '2.0.1.0',
+    'alias' => 
+    array (
+      '@yii/mongodb' => $vendorDir . '/yiisoft/yii2-mongodb',
+    ),
+  ),
+  'yiisoft/yii2-sphinx' => 
+  array (
+    'name' => 'yiisoft/yii2-sphinx',
+    'version' => '2.0.1.0',
+    'alias' => 
+    array (
+      '@yii/sphinx' => $vendorDir . '/yiisoft/yii2-sphinx',
+    ),
+  ),
 );

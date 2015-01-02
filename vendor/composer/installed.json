@@ -925,5 +925,107 @@
             "faker",
             "yii2"
         ]
+    },
+    {
+        "name": "yiisoft/yii2-mongodb",
+        "version": "2.0.1",
+        "version_normalized": "2.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yiisoft/yii2-mongodb.git",
+            "reference": "407050a07c9703b0cc7fa534b70d12e1785a7e2a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/yiisoft/yii2-mongodb/zipball/407050a07c9703b0cc7fa534b70d12e1785a7e2a",
+            "reference": "407050a07c9703b0cc7fa534b70d12e1785a7e2a",
+            "shasum": ""
+        },
+        "require": {
+            "ext-mongo": ">=1.4.0",
+            "yiisoft/yii2": "*"
+        },
+        "time": "2014-12-07 16:42:41",
+        "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "yii\\mongodb\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Paul Klimov",
+                "email": "klimov.paul@gmail.com"
+            }
+        ],
+        "description": "MongoDb extension for the Yii framework",
+        "keywords": [
+            "active-record",
+            "mongo",
+            "mongodb",
+            "yii2"
+        ]
+    },
+    {
+        "name": "yiisoft/yii2-sphinx",
+        "version": "2.0.1",
+        "version_normalized": "2.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yiisoft/yii2-sphinx.git",
+            "reference": "cfb2d996f2e896f216e4513df1d8abdaa70a1940"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/yiisoft/yii2-sphinx/zipball/cfb2d996f2e896f216e4513df1d8abdaa70a1940",
+            "reference": "cfb2d996f2e896f216e4513df1d8abdaa70a1940",
+            "shasum": ""
+        },
+        "require": {
+            "ext-pdo": "*",
+            "ext-pdo_mysql": "*",
+            "yiisoft/yii2": "*"
+        },
+        "time": "2014-12-07 16:42:41",
+        "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "yii\\sphinx\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Paul Klimov",
+                "email": "klimov.paul@gmail.com"
+            }
+        ],
+        "description": "Sphinx full text search engine extension for the Yii framework",
+        "keywords": [
+            "active-record",
+            "fulltext",
+            "search",
+            "sphinx",
+            "yii2"
+        ]
     }
 ]

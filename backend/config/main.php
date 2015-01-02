@@ -29,10 +29,6 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-	'mongodb' => [
-            'class' => '\yii\mongodb\Connection',
-            'dsn' => 'mongodb://developer:password@localhost:27017/mydatabase',
-        ],
     ],
     'params' => $params,
 ];
