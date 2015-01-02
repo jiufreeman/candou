@@ -25,6 +25,5 @@ echo $url;
 $filename = basename($url);
 echo $filename;
 $content = file_get_contents($url);
-echo $content;
-uploadImg($content, $url);
+uploadImg($content, $filename);
 
