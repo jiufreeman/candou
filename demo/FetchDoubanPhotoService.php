@@ -18,7 +18,7 @@ class FetchDoubanPhotoService {
     public function addStage($douban_id){
         $urls = $this->getPhotosByUrls($douban_id);
         var_dump($urls);
-
+    exit;
         $movie_id = $this->getMovieIdByDoubanId($douban_id);
         if( !$movie_id ) {
             return FALSE;
