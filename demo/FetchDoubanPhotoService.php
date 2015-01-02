@@ -44,6 +44,9 @@ class FetchDoubanPhotoService {
             $url            = $urls[$i];
             $stage          = basename($url);
 
+            $content = file_get_contents($url);
+
+            $this->uploadImg($content, $stage);
 
 //            $sql = "INSERT INTO n_movie_stage(movie_id, user_id, orders, type, stage, status, create_time, url) "
 //                                    . " values($movie_id, $user_id, $orders, $type, '$stage', $status, $create_time, '$url')";
@@ -85,7 +88,6 @@ try{
 
     //上传图片
     public function uploadImg($content, $filename, $bucket='candou-stage') {
-        //todo
         //引入又拍云 PHP SDK
         require_once('upyun.class.php');
 

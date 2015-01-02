@@ -13,6 +13,7 @@ function uploadImg($content, $filename, $bucket='candou-stage') {
     );
 
     $rsp = $upyun->writeFile("/".$filename, $content, true, $opts);
+
     $width = intval($rsp['x-upyun-width']);
     $height = intval($rsp['x-upyun-height']);
 
@@ -21,9 +22,7 @@ function uploadImg($content, $filename, $bucket='candou-stage') {
 }
 
 $url = "http://img3.douban.com/view/photo/raw/public/p2218972270.jpg";
-echo $url;
 $filename = basename($url);
-echo $filename;
 $content = file_get_contents($url);
 uploadImg($content, $filename);
 
