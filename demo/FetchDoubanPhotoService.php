@@ -19,10 +19,18 @@ class FetchDoubanPhotoService {
     public function addStage($douban_id){
         $urls = $this->getPhotosByUrls($douban_id);
         var_dump($urls);
-    exit;
-        $movie_id = $this->getMovieIdByDoubanId($douban_id);
-        if( !$movie_id ) {
-            return FALSE;
+
+//        $movie_id = $this->getMovieIdByDoubanId($douban_id);
+//        if( !$movie_id ) {
+//            return FALSE;
+//        }
+
+        //存储图片
+        for ($i=0; $i<count($urls), $i++) {
+            $url = $urls[$i];
+            $content = file_get_contents($url);
+            $filename = basename($url);
+            $this->uploadImg($content, $filename);
         }
 
         for( $i=0;$i<count($urls);$i++ ) {
@@ -35,25 +43,26 @@ class FetchDoubanPhotoService {
             $stage          = basename($url);
 
             //todo 写入数据库
-            /*
             $sql = "INSERT INTO n_movie_stage(movie_id, user_id, orders, type, stage, status, create_time, url) "
                                     . " values($movie_id, $user_id, $orders, $type, '$stage', $status, $create_time, '$url')";
-            echo '<br />'.$i.' //// ';
             echo $sql;
-            try{
-                $connection = Yii::app()->db;
-                $command = $connection->createCommand($sql);
-                $result = $command->query();
-                if( !$result ) {
-                    echo "FALSE";
-                } else {
-                    echo "TRUE";
-                }
-                echo '<hr />';
-            }catch(Exception $e){
+            /*
+echo '<br />'.$i.' //// ';
+echo $sql;
+try{
+    $connection = Yii::app()->db;
+    $command = $connection->createCommand($sql);
+    $result = $command->query();
+    if( !$result ) {
+        echo "FALSE";
+    } else {
+        echo "TRUE";
+    }
+    echo '<hr />';
+}catch(Exception $e){
 
-            }
-             */
+}
+ */
         }
     }
 
@@ -73,9 +82,24 @@ class FetchDoubanPhotoService {
     }
 
     //上传图片
-    public function uploadImg($img, $filename, $bucket='movieposter') {
+    public function uploadImg($content, $filename, $bucket='candou-stage') {
         //todo
+        //引入又拍云 PHP SDK
+        require_once('upyun.class.php');
 
+        //实例化又拍云对象, bucket, operate user, operate password
+        $upyun = new UpYun($bucket, 'maxwelldu', 'maxwelldu');
+
+        $opts = array(
+            UpYun::CONTENT_MD5 => md5($content)
+        );
+
+        $rsp = $upyun->writeFile("/".$filename, $content, true, $opts);
+        $width = intval($rsp['x-upyun-width']);
+        $height = intval($rsp['x-upyun-height']);
+
+        echo $width;
+        echo $height;
     }
 
     //获取图片的页面url，包括剧照和截图，例如剧照有159条，那么就有4页（即4个URL），因为每页显示40条
