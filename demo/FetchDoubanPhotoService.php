@@ -10,7 +10,8 @@ $f->addStage($douban_id);
 
 
 class FetchDoubanPhotoService {
-
+    //豆瓣电影的前缀
+    private $prefix     = "http://movie.douban.com/subject/";
     //页面大小
     private $pageSize   = 40;
 
