@@ -22,7 +22,7 @@ class SiteController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'error', 'testupload'],
+                        'actions' => ['login', 'error', 'testupload', 'say'],
                         'allow' => true,
                     ],
                     [
@@ -52,6 +52,11 @@ class SiteController extends Controller
             ],
         ];
     }
+
+	public function actionSay() 
+	{
+		echo "Hello ";
+	}
 
     public function actionTestupload()
     {
