@@ -22,7 +22,7 @@ class SiteController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'error', 'testupload', 'say'],
+                        'actions' => ['login', 'error', 'testupload', 'say', 'sphinx'],
                         'allow' => true,
                     ],
                     [
@@ -92,4 +92,11 @@ class SiteController extends Controller
 
         return $this->goHome();
     }
+
+    public function actionSphinx()
+    {
+        return $this->render('sphinx');
+    }
+
+
 }
