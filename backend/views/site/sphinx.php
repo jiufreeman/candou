@@ -11,9 +11,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-sphinx">
     <h1><?= Html::encode($this->title) ?></h1>
-
     <p>Please input keywords to search:</p>
-
     <div class="row">
         <div class="col-lg-5">
             <?php $form = ActiveForm::begin(['id' => 'sphinx-form']); ?>
