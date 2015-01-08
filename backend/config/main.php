@@ -13,6 +13,14 @@ return [
     'bootstrap' => ['log'],
     'modules' => [],
     'components' => [
+		'request' => [
+			'parsers' => [
+			'application/json' => 'yii\web\JsonParser',
+			],
+		],
+		'response' => [
+			'format' => 'json',
+		],
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
