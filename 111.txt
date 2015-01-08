@@ -1,3 +1,2 @@
-test
-test2
-2015-01-08
+<?php
+echo time();
